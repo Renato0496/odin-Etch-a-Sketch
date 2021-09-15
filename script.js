@@ -1,9 +1,5 @@
-document.body.onload = createDivs(16*16);
+const container = document.querySelector('.game');
 
-function createDivs(size) {
-    const divs = document.createElement('div');
-    const container = document.getElementsByClassName('container');
-    for (i = 0; i < size; i++) {
-        container.appendChild(divs);
-    }
-}
+
+const div = document.createElement('div');
+container.appendChild(div);
