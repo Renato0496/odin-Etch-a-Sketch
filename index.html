@@ -3,23 +3,27 @@
 
 <head>
     <meta charset="UTF-8" />
-    <script src="script.js"></script>
-    <meta name='viewport' content="width=devide-width , initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Etch-a-Sketch</title>
+
+    <!Al usar defer, lee el script al final. Lo que solucion la duda de container null.>
+
+        <script src="script.js" defer></script>
+        <meta name='viewport' content="width=devide-width , initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+        <title>Etch-a-Sketch</title>
 </head>
 
 <body>
     <div class="menu">
         <h1>Your selection</h1>
         <input type="range" id="number" name="number" min="2" max="100" value="16" step="1">
-        <label for="number">Gotcha!</label>
+        <label for="number">16</label>
         <button class="reset" type="button">Reset</button>
     </div>
-    <div class="game"></div>
-</body>
+    <div class="game" id="game"></div>
+
 <footer>
     <p>Made by <a href="https://github.com/Renato0496">Renato Alvarado</a></p>
-</footer>
+</footer>   
+</body>
 
 </html>

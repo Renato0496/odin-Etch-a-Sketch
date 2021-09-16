@@ -1,9 +1,27 @@
-.container {
-    display: inline-grid;
-    grid-template-columns: repeat(16,1fr);
-    grid-template-rows: repeat(16,1fr);
+body {
+    margin: 100px 150px 0px 250px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 7fr 1fr;
 }
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    grid-template-rows: repeat(16, auto);
+    justify-content: center;
+
+}
+
 .square {
-    background-color: rgb(240,240,240);
-    border: 2px solid black;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+    right: 5px;
+
 }
