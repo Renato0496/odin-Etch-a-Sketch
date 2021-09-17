@@ -3,9 +3,12 @@ const number = document.querySelector('.number');
 const sqr = document.getElementsByClassName('square');
 const resetBut = document.querySelector('.reset')
 
-function getGrid() {
-    for (i = 0; i < 256; i++) {
+getGrid(16);
 
+function getGrid(a) {
+    container.style.gridTemplateColumns = `repeat(${a},1fr)`;
+    container.style.gridTemplateRows = `repeat(${a},1fr)`;
+    for (let i = 0; i < a * a; i++) {
         const div = document.createElement('div');
         div.setAttribute('class', 'square');
         container.appendChild(div);
@@ -25,9 +28,15 @@ function reset() {
     for (let i = 0; i < sqr.length; i++) {
         sqr[i].style.backgroundColor = 'rgb(240, 240, 240)';
     }
+    let newNumb = parseInt(prompt('If you want, you can change the number. Max 100.'));
+    if (newNumb <= 100 && newNumb > 0) {
+        container.style.gridTemplateColumns = `repeat(${newNumb},1fr)`;
+        container.style.gridTemplateRows = `repeat(${newNumb},1fr)`;
+        sqr.style.width = `${416/newNumb}px`;
+        sqr.style.heigth = `${416/newNumb}px`;
+        getGrid(newNumb);
+    }
 }
-
-getGrid();
 
 hovering();
 

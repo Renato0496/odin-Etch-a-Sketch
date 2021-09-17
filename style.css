@@ -1,24 +1,25 @@
 body {
     background-color: cornflowerblue;
-    margin: 100px 150px 0px 250px;
+    margin: 100px 200px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 7fr 1fr;
+    
 }
 
 .game {
+    margin: 0px 50px;
+    position: relative;
     display: grid;
-    width: 100%;
-    grid-template-columns: repeat(16, auto);
-    grid-template-rows: repeat(16, auto);
+    width: 416px;
     justify-content: center;
 }
 
 .square {
     background-color: rgb(240, 240, 240);
     border: 1px solid black;
-    width: 15px;
-    height: 15px;
+    width: 26px;
+    height: 26px;
 }
 
 footer {
