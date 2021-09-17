@@ -1,4 +1,5 @@
 body {
+    background-color: cornflowerblue;
     margin: 100px 150px 0px 250px;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -7,10 +8,10 @@ body {
 
 .game {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(16, auto);
     grid-template-rows: repeat(16, auto);
     justify-content: center;
-
 }
 
 .square {
@@ -19,9 +20,15 @@ body {
     width: 15px;
     height: 15px;
 }
+
 footer {
     position: fixed;
     bottom: 0px;
     right: 5px;
+}
 
+.menu {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
 }
