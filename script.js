@@ -1,18 +1,25 @@
 const container = document.querySelector('.game');
 const number = document.querySelector('.number');
+const textSize = document.querySelector('#number');
 const sqr = document.getElementsByClassName('square');
-const resetBut = document.querySelector('.reset')
+const resetBut = document.querySelector('.reset');
+let size = 16;
 
-getGrid(16);
+getGrid();
 
-function getGrid(a) {
-    container.style.gridTemplateColumns = `repeat(${a},1fr)`;
-    container.style.gridTemplateRows = `repeat(${a},1fr)`;
-    for (let i = 0; i < a * a; i++) {
+function getGrid() {
+    container.style.gridTemplateColumns = `repeat(${size},1fr)`;
+    let sqrSize = size*size
+    let a = 300/size;
+    for (let i = 0; i < sqrSize; i++) {
         const div = document.createElement('div');
-        div.setAttribute('class', 'square');
+        div.classList.add('square');
+        div.style.height=`${a}px`;
+        div.style.width=`${a}px`;
         container.appendChild(div);
     }
+    hovering();
+    textSize.innerHTML=`${size} x ${size} :)`;
 };
 
 function hovering() {
@@ -25,19 +32,15 @@ function hovering() {
 };
 
 function reset() {
-    for (let i = 0; i < sqr.length; i++) {
-        sqr[i].style.backgroundColor = 'rgb(240, 240, 240)';
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
     }
-    let newNumb = parseInt(prompt('If you want, you can change the number. Max 100.'));
-    if (newNumb <= 100 && newNumb > 0) {
-        container.style.gridTemplateColumns = `repeat(${newNumb},1fr)`;
-        container.style.gridTemplateRows = `repeat(${newNumb},1fr)`;
-        sqr.style.width = `${416/newNumb}px`;
-        sqr.style.heigth = `${416/newNumb}px`;
-        getGrid(newNumb);
+    size = prompt('If you want, you can change the number. Max 100.');
+    if (size <= 100 && size > 0) {
+        getGrid();
     }
 }
 
-hovering();
+
 
 resetBut.addEventListener('click', reset);

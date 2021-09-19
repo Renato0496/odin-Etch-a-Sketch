@@ -1,35 +1,67 @@
 body {
-    background-color: cornflowerblue;
-    margin: 100px 200px;
+    font-size: 10px;
+    background-color: rgba(164, 190, 236, 0.747);
+    margin: 1px 250px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 7fr 1fr;
-    
+    grid-template-columns: 200px 600px;
+    grid-template-rows: 1px 600px 50px;
+
+}
+.gameWrap {
+    grid-area: 2/2/3/3;
+    margin: auto;
 }
 
 .game {
-    margin: 0px 50px;
-    position: relative;
+    margin: 0px 0px 0px 100px;
+    max-width: 700px;
+    max-height: 700px;
     display: grid;
-    width: 416px;
-    justify-content: center;
 }
 
 .square {
     background-color: rgb(240, 240, 240);
-    border: 1px solid black;
-    width: 26px;
-    height: 26px;
+    border: 0.5px solid black;
 }
 
 footer {
-    position: fixed;
-    bottom: 0px;
-    right: 5px;
+    grid-area: 3/2/4/3;
+    text-align: end;
 }
 
 .menu {
+    grid-area: 2/1/3/2;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 3fr 2fr 1fr 1fr 3fr;
     text-align: center;
+    margin: auto;
+}
+#selection {
+    grid-area: 2/1/3/2;
+}
+#number {
+    grid-area: 3/1/4/2;
+    
+}
+button {
+    grid-area: 4/1/5/2;
+    width: 70%;
+    margin: auto;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    padding: 12px 28px;
+    background-color: #e7e7e7;
+    color: black;
+}
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+a{
+    color: brown;
+}
+a:visited{
+    color: brown;
+}
+a:hover{
+    color: rgba(21, 20, 90, 0.705);
 }
